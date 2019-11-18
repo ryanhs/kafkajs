@@ -173,17 +173,17 @@ module.exports = class Encoder {
   }
 
   writeEncoder(value) {
-    if (value instanceof Encoder !== true) {
-      throw new Error('value should be an instance of Encoder')
-    }
+    // if (value instanceof Encoder !== true) {
+    //   throw new Error('value should be an instance of Encoder')
+    // }
     this.buffer = Buffer.concat([this.buffer, value.buffer])
     return this
   }
 
   writeEncoderArray(value) {
-    if (!Array.isArray(value) || value.some(v => !(v instanceof Encoder))) {
-      throw new Error('all values should be an instance of Encoder[]')
-    }
+    // if (!Array.isArray(value) || value.some(v => !(v instanceof Encoder))) {
+    //   throw new Error('all values should be an instance of Encoder[]')
+    // }
 
     const newBuffer = [this.buffer]
     value.forEach(v => {
@@ -194,9 +194,9 @@ module.exports = class Encoder {
   }
 
   writeBuffer(value) {
-    if (value instanceof Buffer !== true) {
-      throw new Error('value should be an instance of Buffer')
-    }
+    // if (value instanceof Buffer !== true) {
+    //   throw new Error('value should be an instance of Buffer')
+    // }
 
     this.buffer = Buffer.concat([this.buffer, value])
     return this
