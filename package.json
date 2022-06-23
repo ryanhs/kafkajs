@@ -1,5 +1,5 @@
 {
-  "name": "kafkajs",
+  "name": "@ryanhs/kafkajs",
   "version": "1.11.0",
   "description": "A modern Apache Kafka client for node.js",
   "author": "Tulio Ornelas <ornelas.tulio@gmail.com>",
@@ -13,13 +13,6 @@
   ],
   "engines": {
     "node": ">=8.6.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tulios/kafkajs.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tulios/kafkajs/issues"
   },
   "homepage": "https://kafka.js.org",
   "scripts": {
@@ -41,7 +34,7 @@
     "test:group:producer:ci": "JEST_JUNIT_OUTPUT=test-report.xml ./scripts/testWithKafka.sh \"yarn test:group:producer --ci --maxWorkers=4 --no-watchman\"",
     "test:group:consumer:ci": "JEST_JUNIT_OUTPUT=test-report.xml ./scripts/testWithKafka.sh \"yarn test:group:consumer --ci --maxWorkers=4 --no-watchman\"",
     "test:group:others:ci": "JEST_JUNIT_OUTPUT=test-report.xml ./scripts/testWithKafka.sh \"yarn test:group:others --ci --maxWorkers=4 --no-watchman\"",
-    "test:types": "./node_modules/.bin/tsc -p types/"
+    "test:types": "tsc -p types/"
   },
   "devDependencies": {
     "@types/node": "^12.0.8",
@@ -76,5 +69,16 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanhs/kafkajs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanhs/kafkajs/issues"
   }
 }
